@@ -1,0 +1,15 @@
+{% extends 'volunteer_base.html' %}
+{% block main  %}
+<div class="card shadow m-2">
+    <div class="card-body">
+        <h5 class="p-2 text-danger" style="border-bottom: 2px solid orange;">Volunteer Profile</h5>
+        <div class="container-fluid">
+            <h3>Volunteer priority  Details</h3>
+            <p><strong>Urgency of Need:</strong> {{ volunteer_profile.urgency_of_need }}</p>
+            <p><strong>Past Donations:</strong> {{ volunteer_profile.past_donations }}</p>
+            <p><strong>Registration Date:</strong> {{ volunteer_profile.registration_date }}</p>
+            <a href="{% url 'update_volunteer_profile' %}" class="btn btn-primary">Update Profile</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'volunteer_base.html' %}
+{% block main  %}
+{% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+<div class="card shadow">
+    <div class="card-body">
+
+        <h5 class="p-2" style="border-bottom: 2px solid orange;">All Donations</h5>
+<div class="container-fluid">
+
+        <table class="table table-bordered table-sm" id="example">
+    <thead>
+        <tr>
+            <th scope="col">Donation Name</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for donation in donations %}
+            <tr>
+                <td>{{ donation.donationname }}</td>
+                <td>{{ donation.status }}</td>
+                <td>
+                    {% if donation.status == "accept"  %}
+                        <form method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="donation" value="{{ donation.id }}">
+                            <button type="submit" class="btn btn-primary">Request Donation</button>
+                        </form>
+                    {% elif donation.status == "requested" %}
+                        Requested
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+
+
+
+    
+{% endblock %}
+
+
+
+
+
+
+

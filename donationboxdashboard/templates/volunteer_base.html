@@ -1,0 +1,120 @@
+{% load static %}
+
+<html lang="en">
+<head>
+  <title>Donation Box</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/sidebar_volunteer.css' %}">
+  <script src="{% static 'js/myjs.js' %}"></script>
+</head>
+<body>
+  <!-- Vertical navbar start -->
+  <div class="vertical-nav" id="sidebar">
+    <div class="py-4 px-3 mb-1">
+      <p class="font-weight-bold text-uppercase px-3 small dashboard-text text-center">Donation Box</p>
+      <div class="media d-flex align-items-center">
+        <img src="{% static 'images/adminlogo.png' %}" width="80" height="80" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+        <div class="media-body">
+          <h4 class="mb-0">Volunteer</h4>
+          <p class="text-muted mb-0">{{ request.user.username }}</p>
+        </div>
+      </div>
+    </div>
+    <ul class="nav flex-column bg-white">
+      {% if volunteer.is_organization_volunteer %}
+        <li class="nav-item">
+          <a href="{% url 'volunteer_home' %}" class="nav-link text-dark">
+            <i class="fas fa-tachometer-alt fa-fw mr-3 text-primary"></i>
+            Dashboard
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'collection_req' %}" class="nav-link text-dark">
+            <i class="fas fa-cog mr-3 text-primary fa-fw"></i>
+            Donation Collection Req.
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" id="navbardrop" data-toggle="dropdown">
+            <i class="fas fa-chart-bar mr-3 text-primary fa-fw"></i> Collection History
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="{% url 'donationrec_volunteer' %}">Donation Received</a>
+            <a class="dropdown-item" href="{% url 'donationnotrec_volunteer' %}">Donation Not Received</a>
+            <a class="dropdown-item" href="{% url 'donationdelivered_volunteer' %}">Donation Delivered &#128522;</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'profile_volunteer' %}" class="nav-link text-dark">
+            <i class="fas fa-cog mr-3 text-primary fa-fw"></i>
+            Profile
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'changepwd_volunteer' %}" class="nav-link text-dark">
+            <i class="fas fa-cog mr-3 text-primary fa-fw"></i>
+            Change Password
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'logout' %}" class="nav-link text-dark">
+            <i class="fas fa-sign-out-alt mr-3 text-primary fa-fw"></i>
+            Logout
+          </a>
+        </li>
+      {% else %}
+        <li class="nav-item">
+          <a href="{% url 'volunteer_home' %}" class="nav-link text-dark">
+            <i class="fas fa-tachometer-alt fa-fw mr-3 text-primary"></i>
+            Dashboard
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'volunteer_profile_details' %}" class="nav-link text-dark">
+            <i class="fas fa-tachometer-alt fa-fw mr-3 text-primary"></i>
+            Update Priority Form
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'profile_volunteer' %}" class="nav-link text-dark">
+            <i class="fas fa-cog mr-3 text-primary fa-fw"></i>
+            Profile
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'changepwd_volunteer' %}" class="nav-link text-dark">
+            <i class="fas fa-cog mr-3 text-primary fa-fw"></i>
+            Change Password
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'logout' %}" class="nav-link text-dark">
+            <i class="fas fa-sign-out-alt mr-3 text-primary fa-fw"></i>
+            Logout
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </div>
+  <!-- Vertical navbar end -->
+  <!-- Page content holder -->
+  <div class="page-content p-4" id="content">
+    <a href="{% url 'logout' %}" title="logout" class="float-right text-white"><i class="fas fa-sign-out-alt fa-2x"></i></a>
+    <!-- Toggle btn -->
+    <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4">
+      <i class="fas fa-bars mr-2"></i>
+      <small class="text-uppercase font-weight-bold">Toggle</small>
+    </button>
+    <!-- End toggle btn -->
+    {% block main %}
+    {% endblock %}
+  </div>
+  <!-- End page content holder -->
+</body>
+</html>

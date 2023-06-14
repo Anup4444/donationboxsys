@@ -1,0 +1,37 @@
+{% extends 'admin_base.html' %}
+{% block main  %}
+<div class="card shadow">
+    <div class="card-body">
+
+        <h5 class="p-2" style="border-bottom: 2px solid orange;">View Donor Detail</h5>
+<div class="container-fluid">
+
+         <table class="table table-bordered">
+ <tr align="center">
+<td colspan="4" style="font-size:20px;color:red">
+ Donor Details</td></tr>
+
+    <tr>
+    <th>Donor Name</th>
+    <td>{{donor.user.first_name}} {{donor.user.last_name}}</td>
+    <th>Donor Contact</th>
+    <td>{{donor.contact}}</td>
+  </tr>
+  <tr>
+    <th>Email</th>
+    <td>{{donor.user.username}}</td>
+    <th>Donor PIC</th>
+    <td><img src="{{donor.userpic.url}}" width="50px" height="50px"></td>
+  </tr>
+<tr align="center">
+<td colspan="4" style="font-size:20px;color:red">
+    <a href="{% url 'delete_donor' donor.user.id %}" onclick="return confirm('Are You Sure?')" class="text-primary">Delete</a></td></tr>
+
+
+</table>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

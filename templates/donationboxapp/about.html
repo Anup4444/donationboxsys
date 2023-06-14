@@ -1,0 +1,37 @@
+{% extends 'donationboxapp/base.html' %}
+{% load static %}
+{% block body %}
+<!--? About Law Start-->
+<section class="about-low-area section-padding2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-10">
+                <div class="about-caption mb-50">
+                    <!-- Section Tittle -->
+                    <div class="section-tittle mb-35">
+                        <span>About our foundetion</span>
+                        <h2>We Are In A Mission To  Help Helpless</h2>
+                    </div>
+                    <p>We provide awareness to people, volunteer and create transparency between donor and the recipient.</p>
+                    <p>Mainly focus for nation welfare and donation program which help many of people who are actully in need.</p>
+                </div>
+                <a href="{% url 'about' %}" class="btn">About US</a>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <!-- about-img -->
+                <div class="about-img ">
+                    <div class="about-font-img d-none d-lg-block">
+                        <img src="{% static 'assets/img/gallery/about2.png' %}" alt="">
+                    </div>
+                    <div class="about-back-img ">
+                        <img src="{% static 'assets/img/gallery/about1.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About Law End-->
+
+
+{% endblock body %}

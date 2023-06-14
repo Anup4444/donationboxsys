@@ -1,0 +1,83 @@
+{% load static %}
+<html>
+<head>
+<style>
+hr.separator{
+    border: 10px solid green;
+  border-radius: 5px;
+  }
+</style>
+</head>
+<body>
+{% include 'navigation.html' %}
+<hr class="mt-0">
+
+<div class="container" style="margin-top: 40px;">
+
+
+    <h4 class="text-center p-2 border-bottom border-top mt-2">Donation Gallery</h4>
+    {% for i in gallery %}
+    <div class="row">
+
+        <div class="col-sm-3">
+            <div class="card mb-2">
+                <img src="{{i.deliverypic.url}}" class="card-img-top" style="height:350px;">
+                <div class="card-body">
+                    <h5 class="text-center font-weight-bold">{{i.donation.donationname}}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th style="width:200px;color:red">Donor Name</th>
+                        <th>{{i.donation.donor.user.first_name}} {{i.donation.donor.user.last_name}} </th>
+                    <th style="color:red">Donor PIC</th>
+                    <th><img src="{{i.donation.donor.userpic.url}}" class="" style="width:100px;height:100px;"></th>
+
+                    </tr>
+                    <tr>
+                        <th style="width:200px;color:red">Donor Email</th>
+                        <th> {{i.donation.donor.user.username}} </th>
+                    <th style="color:red">Donor Contact</th>
+                    <th>{{i.donation.donor.contact}}</th>
+
+                    </tr>
+
+
+                    <tr>
+                        <th style="width:200px;color:green">Volunteer Name</th>
+                        <th>{{i.donation.volunteer.user.first_name}} {{i.donation.volunteer.user.last_name}} </th>
+                    <th style="color:green">Volunteer PIC</th>
+                    <th><img src="{{i.donation.volunteer.userpic.url}}" class="" style="width:100px;height:100px;"></th>
+
+                    </tr>
+                    <tr>
+                        <th style="width:200px;color : green">Volunteer Email</th>
+                        <th> {{i.donation.volunteer.user.username}} </th>
+                    <th style="color:green">Volunteer Contact</th>
+                    <th>{{i.donation.volunteer.contact}}</th>
+
+                    </tr>
+
+                    <tr>
+                        <th style="color:blue">Donation Area</th>
+                        <th>{{i.donation.donationarea.areaname}}</th>
+                    </tr>
+                    <tr>
+                        <th style="color:blue">Donation Date</th>
+                        <th>{{i.donation.donationdate}}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <hr class="separator">
+    {% endfor %}
+</div>
+
+
+</body>
+</html>

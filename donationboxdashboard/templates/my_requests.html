@@ -1,0 +1,50 @@
+{% extends 'volunteer_base.html' %}
+{% block main  %}
+
+<div class="card shadow">
+    <div class="card-body">
+
+        <h5 class="p-2" style="border-bottom: 2px solid orange;">My Requests Status</h5>
+<div class="container-fluid">
+
+        <table class="table table-bordered table-sm" id="example">
+            <thead>
+                <tr>
+                    <th>Donation</th>
+                    <th>Date Requested</th>
+                    <th>Status</th>
+                    <th>Collection Location</th>
+                    <th>Contact Donor</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for request in requests %}
+                <tr>
+                  <td>{{ request.donation.donationname }}</td>
+                  <td>{{ request.request_date }}</td>
+                  <td>{{ request.status }}</td>
+                  <td>
+                    {% if request.status == 'assigned' %}
+                      {{ request.donation.collectionloc }}
+                    {% else %}
+                      N/A
+                    {% endif %}
+                  </td>
+                  <td>
+                    {% if request.status == 'assigned' %}
+                      {{ request.donation.donor.contact }}
+                    {% else %}
+                      N/A
+                    {% endif %}
+                  </td>
+                </tr>
+                
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

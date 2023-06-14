@@ -1,0 +1,255 @@
+{% extends 'donationboxapp/base.html' %}
+{% load static %}
+{% block body %}
+<main>
+    <!-- slider Area Start-->
+    <div class="slider-area">
+        <div class="slider-active">
+
+
+            <!-- Single Slider -->
+            <div class="single-slider slider-height d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10">
+                            <div class="hero__caption">
+                                <h1 data-animation="fadeInUp" data-delay=".6s">Our Helping to<br> the Nation.</h1>
+                                <P data-animation="fadeInUp" data-delay=".8s" >To make a difference in the nation, it is important for individuals to actively engage in their communities, participate in civic activities, and contribute to causes they believe in. This could include volunteering, donating to charitable organizations.
+
+                                    Additionally, it is important for individuals to stay informed about current events, educate themselves on social issues, and engage in constructive dialogue with others who may have different perspectives. By doing so, we can collectively work towards building a better society and making a positive impact on the nation.</P>
+                                <!-- Hero-btn -->
+                                <div class="hero__btn">
+                                    <a href="{% url 'all_logins' %}" class="btn hero-btn mb-10"  data-animation="fadeInLeft" data-delay=".8s">Donate</a>
+                                    <a href="industries.html" class="cal-btn ml-15" data-animation="fadeInRight" data-delay="1.0s">
+                                        <a href="https://youtu.be/xozNnytRE6E" class="btn hero-btn mb-10"  data-animation="fadeInLeft" data-delay=".8s">Watch Vedio</a>
+                                        
+                                        
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+         
+           
+
+        </div>
+    </div>
+    <!-- slider Area End-->
+    <!--? Services Area Start -->
+    <div class="service-area section-padding30">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-7 col-md-10 col-sm-10">
+                    <!-- Section Tittle -->
+                    <div class="section-tittle text-center mb-80">
+                        <span>What we are doing</span>
+                        <h2>We Are In A Mission To Help The Helpless</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-cat text-center mb-50">
+                        <div class="cat-icon">
+                            <span class="flaticon-null-1"></span>
+                        </div>
+                        <div class="cat-cap">
+                            <h5><a href="services.html">Donation</a></h5>
+                            <p>Donation is the act of giving  goods, or services to a charitable organization or a person in need. It is a way to support causes that one cares about and make a positive impact in the world.Many organizations also accept donations of goods, such as clothing, toys, or shoes supplies. Donating is a personal choice.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-cat active text-center mb-50">
+                        <div class="cat-icon">
+                            <span class="flaticon-think"></span>
+                        </div>
+                        <div class="cat-cap">
+                            <h5><a href="services.html">Volunteering</a></h5>
+                            <p> Volunteering is a way to give back to one's community and make a positive impact on society. It also allows individuals to develop new skills, meet new people, and gain valuable experience. Volunteering is a personal choice, but it can be a rewarding and fulfilling experience that benefits both the individual and the organization they are volunteering with.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-cat text-center mb-50">
+                        <div class="cat-icon">
+                            <span class="flaticon-gear"></span>
+                        </div>
+                        <div class="cat-cap">
+                            <h5><a href="services.html">Awareness</a></h5>
+                            <p>Awareness for donation refers to the efforts to educate individuals about the importance and benefits of donating to charitable organizations or causes. It involves raising awareness about the needs of various communities and populations, and encouraging individuals to make a positive impact by donating their time, money, or resources.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services Area End -->
+    <!--? About Law Start-->
+    <section class="about-low-area section-padding2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-10">
+                    <div class="about-caption mb-50">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle mb-35">
+                            <span>About our foundetion</span>
+                            <h2>We Are In A Mission To  Help Helpless</h2>
+                        </div>
+                        <p>We provide awareness to people, volunteer and create transparency between donor and the recipient.</p>
+                        <p>Mainly focus for nation welfare and donation program which help many of people who are actully in need.</p>
+                    </div>
+                    <a href="{% url 'about' %}" class="btn">About US</a>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <!-- about-img -->
+                    <div class="about-img ">
+                        <div class="about-font-img d-none d-lg-block">
+                            <img src="{% static 'assets/img/gallery/about2.png' %}" alt="">
+                        </div>
+                        <div class="about-back-img ">
+                            <img src="{% static 'assets/img/gallery/about1.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Law End-->
+ <!-- Our Cases Start -->
+ <div class="our-cases-area section-padding30">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-7 col-md-10 col-sm-10">
+                <!-- Section Tittle -->
+                <div class="section-tittle text-center mb-80">
+                    <span>Our Services</span>
+                    <h2>Explore our Services that we works </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-cases mb-40">
+                    <div class="cases-img">
+                        <img src="{% static 'images/donateclothes.jpg' %}" alt="" style="width:100%;height:100%">
+                    </div>
+                    <div class="cases-caption">
+                        <h3><a href="#">Clothes Donation</a></h3>
+                        <p class="card-text text-justify">Be a cause of someone's happiness.
+                            Donate your old clothes to needy people. </p>
+                       
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-cases mb-40">
+                    <div class="cases-img">
+                        <img src="{% static 'images/donatebooks.jpg' %}" alt="">
+                    </div>
+                    <div class="cases-caption">
+                        <h3><a href="#">Books Donation</a></h3>
+                        <p class="card-text text-justify">Donate your old books to needy people so they can study.</p>
+                      
+                        
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-cases mb-40">
+                    <div class="cases-img">
+                        <img src="{% static 'images/donatetoys.jpg' %}" alt="">
+                    </div>
+                    <div class="cases-caption">
+                        <h3><a href="#">Toys Donation</a></h3>
+                        <p class="card-text text-justify">Donate your old or new toys to needy people so they can play.</p>
+                      
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+   
+   
+    <!-- Want To work -->
+    <section class="wantToWork-area ">
+        <div class="container">
+            <div class="wants-wrapper w-padding2  section-bg" data-background="{% static 'assets/img/gallery/section_bg01.png' %}">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-xl-5 col-lg-9 col-md-8">
+                        <div class="wantToWork-caption wantToWork-caption2">
+                            <h2>Lets Change The nation With Humanity</h2>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4">
+                        <a href="{% url 'all_logins' %}" class="btn white-btn f-right sm-left">Become A Volunteer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Want To work End -->
+   
+ 
+    <!--? Count Down Start -->
+    <div class="count-down-area pt-25 section-bg" data-background="{% static 'assets/img/gallery/section_bg02.png' %}">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12 col-md-12">
+                    <div class="count-down-wrapper" >
+                        <div class="row justify-content-between">
+                            
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <!-- Counter Up -->
+                                <div class="single-counter text-center">
+                                    <span class="counter color-green">{{total_donor}}</span>
+                                    <span class="plus">+</span>
+                                    <p class="color-green">Total Donor</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <!-- Counter Up -->
+                                <div class="single-counter text-center">
+                                    <span class="counter color-green">{{total_volunteer}}</span>
+                                    <span class="plus">+</span>
+                                    <p class="color-green">Total Volunteer</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <!-- Counter Up -->
+                                <div class="single-counter text-center">
+                                    <span class="counter color-green">{{total_donation}}</span>
+                                    <span class="plus">+</span>
+                                    <p class="color-green">Total Donations</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <!-- Counter Up -->
+                                <div class="single-counter text-center">
+                                    <span class="counter color-green">{{total_services}}</span>
+                                    <span class="plus">+</span>
+                                    <p class="color-green">Total Services</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Count Down End -->
+    </main>
+
+{% endblock body %}

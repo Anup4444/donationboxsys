@@ -1,0 +1,137 @@
+{% load static %}
+<html>
+<head>
+
+    <script>
+    function checkpass()
+    {
+    if(document.signup.pwd.value!=document.signup.cpwd.value)
+    {
+    alert('Password and Repeat Password field does not match');
+    document.signup.cpwd.focus();
+    return false;
+    }
+    return true;
+    }
+</script>
+
+</head>
+<body>
+{% include 'navigation.html' %}
+<hr class="mt-0">
+
+<div class="card shadow m-5" id = signupform>
+    <div class="card-body">
+        <h5 class="p-2" style="border-bottom: 2px solid orange;">Create an Account (Org. Volunteer/ General Volunteer)</h5>
+<div class="container-fluid">
+<form method="POST" name = "signup" onsubmit="return checkpass();" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" name="firstname" placeholder="Enter First Name"  class="form-control"  pattern="[A-Za-z]+" required>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" name="lastname" placeholder="Enter Last Name"  class="form-control" pattern="[A-Za-z]+" required>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>Email ID</label>
+                <input type="email" name="email" placeholder="example@gmail.com" required class="form-control" pattern="[a-zA-Z0-9_.+-]+@gmail\.com$" required>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>Contact</label>
+                <input type="text" name="contact" placeholder="Contact Number" required class="form-control" pattern="^[0-9]{10}$" required>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="pwd" placeholder="Enter Password"  class="form-control" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" name="cpwd" placeholder="Enter Password Again"  class="form-control" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>User PIC(Must be in jpg or png)</label>
+                <input type="file" name="userpic" class="form-control" pattern="/^.*\.(jpg|png)$/i" required>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>ID Proof PIC(Citizenship , Voter ID , Pan Card etc.)</label>
+                <input type="file" name="idpic" class="form-control" pattern="/^.*\.(jpg|png)$/i" required>
+            </div>
+        </div>
+
+
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label>Address</label>
+                <select name="address"  class="form-control">
+                    <option value="kathmandu">kathmandu</option>
+                    <option value="Bhaktapur">Bhaktapur</option>
+                    <option value="lalitpur">lalitpur</option>
+    
+                     <option value="Other">Other</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>Organization Volunteer(Please, click checkbox only if you are this organization volunteer)</label>
+                <input type="checkbox" name="is_organization_volunteer" class="form-control">
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label>About Yourself</label>
+                <textarea name="aboutme" class="form-control" placeholder="About Yourself" required></textarea>
+            </div>
+        </div>
+
+
+    </div>
+    <input type="submit" value="Submit" class="m-2 px-3 btn btn-primary">
+</form>
+</div>
+</div>
+</div>
+
+{% if error == "no" %}
+<script>
+    alert('Signup Successfully');
+    window.location=('{% url 'volunteer_login' %}');
+</script>
+{% endif %}
+{% if error == "yes" %}
+<script>
+    alert('Something went wrong,Try Again...');
+</script>
+{% endif %}
+
+
+</body>
+</html>
